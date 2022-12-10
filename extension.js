@@ -34,19 +34,18 @@ function result(msg, url) {
     }
     
     // result.channel.clear(); 
-    result.channel.appendLine(msg + '\n参考连接: ' + url + 
-        '\n=========================================\n');
+    result.channel.appendLine(msg + '\n=========================================\n');
     // result.channel.hide()
 
-    vscode.window.showInformationMessage(msg, {modal: true}, '历史输出', '参考连接')
-        .then(function(str){
-            if (str === '历史输出') {
-                result.channel.show();
-            }
-            else if (str === '参考连接') {
-                vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(url));
-            }
-        });
+    // vscode.window.showInformationMessage(msg, {modal: true}, '历史输出', '参考连接')
+    //     .then(function(str){
+    //         if (str === '历史输出') {
+    //             result.channel.show();
+    //         }
+    //         else if (str === '参考连接') {
+    //             vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(url));
+    //         }
+    //     });
 }
 
 // this method is called when your extension is activated
